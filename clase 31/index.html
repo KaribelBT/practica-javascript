@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>libreria</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <!-- <script src="./librerias/scripts/impuestos.js"></script>
+    <script>
+            function calcularIva(){
+                let input = document.body.getElementById('importe');
+                let neto = input.value;
+                let impuesto = iva(neto);
+                alert('El importe correspondiente a IVA es $' + impuesto);
+            }
+    </script> 
+
+    <script src="./librerias/scripts/moment.js"></script>
+    <script>
+        function mostrarHora(){
+            let horaActual = moment()
+                .format('MMMM do YYYY, h:mm:ss a');
+            alert('La hora actual es ' + horaActual);
+        }
+        
+    </script>
+
+    <button onclick="mostrarHora()">Qué hora es?</button> -->
+
+    <script src="./librerias/scripts/moment.js"></script>
+    <script src="./librerias/scripts/jquery.js"></script>
+
+    <script>
+        
+        $(document).ready(function() {
+            alert("ready!");
+        });
+        function mostrarDiasAno(){
+            let today = moment();
+            let finAno = moment().endOf('year');
+            let diferencia = finAno.diff(today, 'days');
+            console.log('Quedan ' + diferencia + ' días para el año nuevo');
+        }
+        mostrarDiasAno();
+
+    </script>
+
+</body>
+</html>

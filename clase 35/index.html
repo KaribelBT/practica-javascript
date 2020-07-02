@@ -1,0 +1,52 @@
+<!-- El objetivo del Workshop es poder desarrollar un diario digital. Debemos desarrollar una home con las noticias principales,
+mostrar una noticia completa y realizar un buscador para encontrar noticias. 
+
+* Fuente de información
+Seleccionen una o más APIs para tener noticias en su diario. Analicen qué datos brinda cada una para mostrar en su proyecto.
+Chuck Norris: https://api.chucknorris.io/
+Simpsons Quotes: https://thesimpsonsquoteapi.glitch.me/
+Storm Consulting: http://quotes.stormconsultancy.co.uk/random.json
+Kanye: https://kanye.rest/
+Quote Design: https://quotesondesign.com/wp-json/wp/v2/posts/
+
+* Estrategia
+¿Cómo se muestran las noticias?
+¿Hará una principal y el resto secundarias?
+¿Quién del equipo hará el maquetado?
+¿Quién consumirá las APIs?
+¿Utilizaremos algún framework o librería tanto de CSS y JS?
+
+* Arquitectura
+Desarrollen una arquitectura que permita a cada integrante del equipo trabajar por separado para luego unir piezas.
+Ejemplo:
+El maquetador podría levantar los datos a mostrar desde una variable tipo array con los datos fijos (hardcode).
+Por otro lado, el desarrollador JS puede trabajar por separado conociendo la estructura del array para llamar a la API y generar el array con el mismo formato.
+Luego solamente realizaremos un reemplazo de la variable tipo array que contiene los datos “hardcodeados” por la función que devuelve los mismos datos desde la API con el mismo formato.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Ejercicio Integrador</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="display-3">Chuck Norris Jokes</h1>
+        <div class="form-group text-center">
+            <input type="text" class="border border-success form-control" id="inputSearch" placeholder="Ingresa criterio de búsqueda...">
+            <br>
+            <button class="btn btn-lg btn-outline-success" id="buttonSearch">Buscar</button>
+        </div>  
+
+        <div id="homeResults">
+        </div>
+    </div>
+    
+
+    <script src="/js/script1.js"></script>
+</body>
+
+</html>

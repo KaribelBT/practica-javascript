@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintando</title>
+</head>
+
+<!--Tomando como base el primer paso de la actividad anterior, vamos a crear el proyecto.
+Creamos una carpeta llamada pintando, dentro de ella creamos un archivo llamado index.html. 
+Usamos nuestro template. Este template nos va a permitir enfocarnos solo en los eventos.
+Objetivo - al hacer click y mantenerlo presionado, pintar las cajitas por donde el puntero pasa por arriba-->
+
+<script>
+
+    window.onload = () => {
+        const contenedor = document.getElementById("contenedor");
+        
+        function mouseMove() {
+                contenedor.addEventListener("mousemove", e => {
+                e.target.style.backgroundColor = "green";
+                })
+            }
+
+            contenedor.addEventListener('mousedown', e => {
+                contenedor.addEventListener('mousemove', mouseMove())
+            })
+
+            contenedor.addEventListener('mouseup', e => {
+                contenedor.removeEventListener('mousemove', mouseMove())
+            })
+    }  
+</script>
+
+<style type="text/css">
+    #contenedor {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    }
+    #contenedor div {
+    height: 50px;
+    border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div id="contenedor">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicios JSON / LOCAL STORAGE</title>
+    <!-- <script src="js/script1.js"></script> -->
+    <!-- <script src="js/script2.js"></script> -->
+    
+</head>
+
+<body> 
+<div id="logIn">
+    <form action="logIn" method="post">
+        <p>Usuario: <input id="usuario" type="text" name="usuario" placeholder="ingresá tu nombre de usuario"></p>
+        <br>
+        <p>Contraseña: <input id="contrasena" type="text" name="contrasena" placeholder="ingresá tu contraseña"></p>
+        <br>
+    </form>
+    <button id="btnLogIn"> Iniciar Sesión</button>
+    <br>
+    <input type="checkbox" name="recordarUsuario" id="recordarUsuario">
+    <label for="recordarUsuario"> Recordar Usuario</label>
+    <br>
+</div>
+
+<div id="formulario">
+    <h1>Bienvenido!!</h1>
+    <form action="formulario" method="get">
+        <p>Nombre: <input id="nombre" type="text" name="nombre"></p>
+        <br>
+        <p>Apellido: <input id="apellido" type="text" name="apellido"></p>
+        <br>
+        <p>DNI: <input id="dni" type="text" name="dni"></p>
+        <br>
+        <p>Fecha de nacimiento: <input id="fecha" type="text" name="fecha"></p>
+        <br>
+        <p>Hobbies favoritos: <textarea id="hobbies" name="hobbies"></textarea></p>
+    </form>
+    <button id="saveForm">Guardar</button>
+</div>
+<br>
+
+<div id="datosRecordados">
+    <p>Nombre: <span id="nombreRecordado"></span></p>
+    <br>
+    <p>Apellido: <span id="apellidoRecordado"></span></p>
+    <br>
+    <p>DNI: <span id="dniRecordado"></span></p>
+    <br>
+    <p>Fecha de nacimiento: <span id="fechaRecordado"></span></p>
+    <br>
+    <p>Hobbies Favoritos: <span id="hobbiesRecordado"></span></p>
+    <br>
+</div>
+
+<button id="logOut">Cerrar Sesión</button>
+
+<script src="js/script3.js"></script>
+
+</body>
+
+</html>
+

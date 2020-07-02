@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<script>
+
+    window.onload = () => {
+        const button = document.querySelector('#boton');
+        const text = document.querySelector('#numeros');
+        const square = document.querySelector('#square');
+        const pizarra = document.querySelector('#pizarra');
+        
+    /*Objetivo 1 - Al clickear el elemento con id boton, muestra una alerta indicando qué botón del mouse se ha usado.*/    
+        button.addEventListener('mousedown', e => {console.log(e)
+           let clicked = null;
+           switch (e.button){
+                case 0:
+                    clicked = 'Botón izquierdo';
+                    break;
+                case 1:
+                    clicked = 'Botón del medio';
+                    break;
+                case 2:
+                    clicked = 'Botón derecho';
+                    break;
+           }
+           if(clicked) alert(`clicked: ${clicked}`)
+        });
+
+    /*Objetivo 2 - Al escribir algo sobre el elemento con id “numeros” muestra una alerta indicando que letra se ha escrito.*/
+        text.addEventListener("keydown", e => {
+            alert(e.key);
+        });
+    
+    /*Objetivo - Crear un cuadrado de 500x500 con un texto Lorem Ipsum dentro. No permitir que los usuarios copien el texto que esté dentro.*/
+        square.addEventListener('copy', e => {
+           console.log('Ups, quiere copiar');
+           e.preventDefault();
+       }) 
+    /*Para esta actividad crearemos una pizarra de 8x8 donde podremos pintar cada cuadrado utilizando el mouse.*/
+        pizarra.addEventListener('click', e=>{
+            const div = e.target // referenciamos el elemento clickeado
+            if(div.style.backgroundColor == 'blue') {
+	            div.style.backgroundColor = '#fff'
+            } else {
+	            div.style.backgroundColor = 'blue'
+            }
+        })            
+}
+</script>
+
+<body>
+    <button id="boton">Hace click!</button>
+    
+    <input type="text" name="texto" id="numeros">
+    
+    <div style="width: 500px; height: 500px; border: black 1px solid">
+        <p id="square">Lorem Ipsum</p>
+    </div>
+    
+    <style type="text/css">
+        #pizarra {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        }
+        #pizarra div {
+        height: 50px;
+        border: 1px solid black;
+        }
+    </style>
+        
+    <div id="pizarra">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>  
+
+</body>
+
+</html>
